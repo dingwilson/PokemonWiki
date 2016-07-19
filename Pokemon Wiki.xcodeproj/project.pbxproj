@@ -13,6 +13,7 @@
 		C87DED151D3DE89000CF90BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C87DED131D3DE89000CF90BC /* LaunchScreen.storyboard */; };
 		C87DED1D1D3DEF1400CF90BC /* PokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87DED1C1D3DEF1400CF90BC /* PokemonViewController.swift */; };
 		C87DED251D3DF9A800CF90BC /* Pokemon.plist in Resources */ = {isa = PBXBuildFile; fileRef = C87DED241D3DF9A800CF90BC /* Pokemon.plist */; };
+		C87DED271D3E10BA00CF90BC /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87DED261D3E10BA00CF90BC /* Pokemon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		C87DED161D3DE89000CF90BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C87DED1C1D3DEF1400CF90BC /* PokemonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonViewController.swift; sourceTree = "<group>"; };
 		C87DED241D3DF9A800CF90BC /* Pokemon.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Pokemon.plist; sourceTree = "<group>"; };
+		C87DED261D3E10BA00CF90BC /* Pokemon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				C87DED0E1D3DE89000CF90BC /* Main.storyboard */,
 				C87DED1C1D3DEF1400CF90BC /* PokemonViewController.swift */,
 				C87DED111D3DE89000CF90BC /* Assets.xcassets */,
+				C87DED261D3E10BA00CF90BC /* Pokemon.swift */,
 				C87DED131D3DE89000CF90BC /* LaunchScreen.storyboard */,
 				C87DED241D3DF9A800CF90BC /* Pokemon.plist */,
 				C87DED161D3DE89000CF90BC /* Info.plist */,
@@ -142,6 +145,7 @@
 			files = (
 				C87DED1D1D3DEF1400CF90BC /* PokemonViewController.swift in Sources */,
 				C87DED0B1D3DE89000CF90BC /* AppDelegate.swift in Sources */,
+				C87DED271D3E10BA00CF90BC /* Pokemon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
