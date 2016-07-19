@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Eggs" id="Xt6-i1-3dC"/>
+                    <tabBarItem key="tabBarItem" title="Eggs" image="Eggs" id="Xt6-i1-3dC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sbN-4y-4VZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -27,7 +27,7 @@
         <!--Pokemon-->
         <scene sceneID="WSn-jX-hKt">
             <objects>
-                <viewController id="42o-CF-cEM" sceneMemberID="viewController">
+                <viewController id="42o-CF-cEM" customClass="PokemonViewController" customModule="Pokemon_Wiki" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ghl-ac-y3C"/>
                         <viewControllerLayoutGuide type="bottom" id="mof-We-KkS"/>
@@ -36,24 +36,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AMk-mM-Pn2">
-                                <rect key="frame" x="0.0" y="20" width="600" height="531"/>
+                            <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="HVr-88-e7f">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="42o-CF-cEM" id="gwP-V2-f9v"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="84" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AMk-mM-Pn2">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" id="HVr-88-e7f">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                    <connections>
-                                        <outlet property="delegate" destination="42o-CF-cEM" id="gwP-V2-f9v"/>
-                                    </connections>
-                                </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="RDC-8W-G2S">
-                                        <rect key="frame" x="0.0" y="72" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="th5-9D-O9W" detailTextLabel="MTW-qO-N1u" imageView="uo7-qr-tTd" rowHeight="84" style="IBUITableViewCellStyleSubtitle" id="RDC-8W-G2S">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RDC-8W-G2S" id="gsT-3e-byy">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="RDC-8W-G2S" id="gsT-3e-byy">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="83.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="th5-9D-O9W">
+                                                    <rect key="frame" x="114" y="26" width="31.5" height="19.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MTW-qO-N1u">
+                                                    <rect key="frame" x="114" y="45.5" width="30.5" height="13.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="TransparentIcon" id="uo7-qr-tTd">
+                                                    <rect key="frame" x="15" y="0.0" width="84" height="83.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -61,14 +80,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="AMk-mM-Pn2" secondAttribute="trailing" id="Ifm-qk-g2X"/>
-                            <constraint firstItem="AMk-mM-Pn2" firstAttribute="top" secondItem="ghl-ac-y3C" secondAttribute="bottom" id="Ljd-Ax-Zbc"/>
-                            <constraint firstItem="AMk-mM-Pn2" firstAttribute="leading" secondItem="ahX-i7-Nsf" secondAttribute="leading" id="nbM-sF-Yml"/>
-                            <constraint firstItem="AMk-mM-Pn2" firstAttribute="bottom" secondItem="mof-We-KkS" secondAttribute="top" id="x3s-lj-1Td"/>
+                            <constraint firstItem="HVr-88-e7f" firstAttribute="trailing" secondItem="AMk-mM-Pn2" secondAttribute="trailing" id="3nI-cI-0ul"/>
+                            <constraint firstItem="AMk-mM-Pn2" firstAttribute="bottom" secondItem="mof-We-KkS" secondAttribute="top" id="Aba-9h-yYg"/>
+                            <constraint firstItem="HVr-88-e7f" firstAttribute="leading" secondItem="AMk-mM-Pn2" secondAttribute="leading" id="Ba9-om-bP6"/>
+                            <constraint firstItem="AMk-mM-Pn2" firstAttribute="top" secondItem="HVr-88-e7f" secondAttribute="bottom" id="KpX-aT-faK"/>
+                            <constraint firstItem="HVr-88-e7f" firstAttribute="top" secondItem="ghl-ac-y3C" secondAttribute="bottom" id="Nwv-9d-R3m"/>
+                            <constraint firstItem="HVr-88-e7f" firstAttribute="leading" secondItem="ahX-i7-Nsf" secondAttribute="leading" id="lig-5m-BzC"/>
+                            <constraint firstAttribute="trailing" secondItem="HVr-88-e7f" secondAttribute="trailing" id="vN6-k3-HEy"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Pokemon" id="oSu-md-NPV"/>
+                    <tabBarItem key="tabBarItem" title="Pokemon" image="Pokemon" id="oSu-md-NPV"/>
                     <connections>
+                        <outlet property="pokemonTableView" destination="AMk-mM-Pn2" id="b5t-8H-sz6"/>
                         <outlet property="searchDisplayController" destination="4Rw-6u-kSI" id="qSI-4N-Miq"/>
                     </connections>
                 </viewController>
@@ -104,4 +127,9 @@
             <point key="canvasLocation" x="-840" y="1191"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Eggs" width="15" height="15"/>
+        <image name="Pokemon" width="15" height="15"/>
+        <image name="TransparentIcon" width="1024" height="1024"/>
+    </resources>
 </document>

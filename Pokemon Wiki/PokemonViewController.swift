@@ -8,15 +8,24 @@
 
 import UIKit
 
-class PokemonViewController: UITableViewController {
+class PokemonViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate {
     
-    var Pokemon : [String] = []
+    var pokemonData = [String]()
+    
+    @IBOutlet weak var pokemonTableView: UITableView!
+    
+    var pokemonSearchResults:Array<String>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        pokemonTableView.delegate = self
+        pokemonTableView.dataSource = self
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
+        
+        getData()
 
     }
 
@@ -27,30 +36,46 @@ class PokemonViewController: UITableViewController {
     
     func getData() {
         // Gets Pokemon Data from Pokemon.txt
-
+        
+        if let path = NSBundle.mainBundle().pathForResource("Pokemon", ofType: "plist"){
+            print("Yay!")
+            if let arrayOfDictionaries = NSArray(contentsOfFile: path){
+                print("Yay!")
+                for dict in arrayOfDictionaries {
+                    print(dict)
+                    pokemonData.append(dict.objectForKey("Name") as! String)
+                }
+            }
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.pokemonTableView.reloadData()
+        })
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // return the number of sections
+        return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // return the number of rows
+        return pokemonData.count
     }
 
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
 
         // Configure the cell...
+        cell.textLabel!.text = pokemonData[indexPath.row]
+        cell.detailTextLabel!.text = "\(indexPath.row + 1)"
+        cell.imageView!.image = UIImage(named: String(pokemonData[indexPath.row]).lowercaseString)
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
