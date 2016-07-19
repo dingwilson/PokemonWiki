@@ -12,7 +12,7 @@
 		C87DED121D3DE89000CF90BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C87DED111D3DE89000CF90BC /* Assets.xcassets */; };
 		C87DED151D3DE89000CF90BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C87DED131D3DE89000CF90BC /* LaunchScreen.storyboard */; };
 		C87DED1D1D3DEF1400CF90BC /* PokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87DED1C1D3DEF1400CF90BC /* PokemonViewController.swift */; };
-		C87DED251D3DF9A800CF90BC /* Pokemon.txt in Resources */ = {isa = PBXBuildFile; fileRef = C87DED241D3DF9A800CF90BC /* Pokemon.txt */; };
+		C87DED251D3DF9A800CF90BC /* Pokemon.plist in Resources */ = {isa = PBXBuildFile; fileRef = C87DED241D3DF9A800CF90BC /* Pokemon.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +23,7 @@
 		C87DED141D3DE89000CF90BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C87DED161D3DE89000CF90BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C87DED1C1D3DEF1400CF90BC /* PokemonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonViewController.swift; sourceTree = "<group>"; };
-		C87DED241D3DF9A800CF90BC /* Pokemon.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Pokemon.txt; sourceTree = "<group>"; };
+		C87DED241D3DF9A800CF90BC /* Pokemon.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Pokemon.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +61,7 @@
 				C87DED1C1D3DEF1400CF90BC /* PokemonViewController.swift */,
 				C87DED111D3DE89000CF90BC /* Assets.xcassets */,
 				C87DED131D3DE89000CF90BC /* LaunchScreen.storyboard */,
-				C87DED241D3DF9A800CF90BC /* Pokemon.txt */,
+				C87DED241D3DF9A800CF90BC /* Pokemon.plist */,
 				C87DED161D3DE89000CF90BC /* Info.plist */,
 			);
 			path = "Pokemon Wiki";
@@ -126,7 +126,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C87DED251D3DF9A800CF90BC /* Pokemon.txt in Resources */,
+				C87DED251D3DF9A800CF90BC /* Pokemon.plist in Resources */,
 				C87DED151D3DE89000CF90BC /* LaunchScreen.storyboard in Resources */,
 				C87DED121D3DE89000CF90BC /* Assets.xcassets in Resources */,
 				C87DED101D3DE89000CF90BC /* Main.storyboard in Resources */,
@@ -291,6 +291,7 @@
 				C87DED1B1D3DE89000CF90BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -9,6 +9,8 @@
 import UIKit
 
 class PokemonViewController: UITableViewController {
+    
+    var Pokemon : [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,8 +18,6 @@ class PokemonViewController: UITableViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,7 +27,7 @@ class PokemonViewController: UITableViewController {
     
     func getData() {
         // Gets Pokemon Data from Pokemon.txt
-        
+
     }
 
     // MARK: - Table view data source
