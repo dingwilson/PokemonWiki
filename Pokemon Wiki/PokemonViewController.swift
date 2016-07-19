@@ -24,6 +24,11 @@ class PokemonViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func getData() {
+        // Gets Pokemon Data from Pokemon.txt
+        
+    }
 
     // MARK: - Table view data source
 
