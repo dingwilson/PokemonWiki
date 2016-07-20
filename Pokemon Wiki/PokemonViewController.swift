@@ -12,6 +12,8 @@ class PokemonViewController: UIViewController, UITableViewDataSource, UITableVie
     
     var pokemonData = [String]()
     
+    var selectedNumber = 0
+    
     @IBOutlet weak var pokemonTableView: UITableView!
     
     var pokemonSearchResults:Array<String>?
@@ -38,19 +40,13 @@ class PokemonViewController: UIViewController, UITableViewDataSource, UITableVie
         // Gets Pokemon Data from Pokemon.txt
         
         if let path = NSBundle.mainBundle().pathForResource("Pokemon", ofType: "plist"){
-            print("Yay!")
             if let arrayOfDictionaries = NSArray(contentsOfFile: path){
-                print("Yay!")
                 for dict in arrayOfDictionaries {
-                    print(dict)
                     pokemonData.append(dict.objectForKey("Name") as! String)
                 }
             }
         }
-        
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            self.pokemonTableView.reloadData()
-        })
+        self.pokemonTableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -71,10 +67,15 @@ class PokemonViewController: UIViewController, UITableViewDataSource, UITableVie
 
         // Configure the cell...
         cell.textLabel!.text = pokemonData[indexPath.row]
-        cell.detailTextLabel!.text = "\(indexPath.row + 1)"
+        cell.detailTextLabel!.text = String(format: "%03d", indexPath.row  + 1)
         cell.imageView!.image = UIImage(named: String(pokemonData[indexPath.row]).lowercaseString)
 
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        selectedNumber = indexPath.row + 1
+        self.performSegueWithIdentifier("showPokemon", sender: self)
     }
 
     /*
@@ -112,14 +113,18 @@ class PokemonViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     */
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        let destinationNavigationController = segue.destinationViewController as! UINavigationController
+        let targetController = destinationNavigationController.topViewController as! ShowPokemonViewController
+        
+        targetController.selectedNumber = selectedNumber
     }
-    */
 
 }

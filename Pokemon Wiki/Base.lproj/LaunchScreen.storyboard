@@ -1,27 +1,98 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="gIt-eP-aaY">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="EHf-IW-A2E">
+        <!--Eggs-->
+        <scene sceneID="xQV-tY-E5U">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                <viewController id="lba-Zk-wfG" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
-                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                        <viewControllerLayoutGuide type="top" id="SH6-fj-Y78"/>
+                        <viewControllerLayoutGuide type="bottom" id="FmT-y6-i25"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                    <view key="view" contentMode="scaleToFill" id="MUE-S6-DAK">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Eggs" image="Eggs" id="MQe-XN-cic"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k1I-Js-3D0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="211" y="820"/>
+        </scene>
+        <!--Pokemon-->
+        <scene sceneID="kHO-KY-QZH">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q5X-RB-rt3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="o35-Y3-F4y" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5La-b3-hVN"/>
+                        <viewControllerLayoutGuide type="bottom" id="qwQ-8X-JTx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QcS-dm-PuA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="adA-yl-ARD">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d0N-le-7Gl">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="7bZ-db-03K">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7bZ-db-03K" id="URw-ft-PV3">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="adA-yl-ARD" firstAttribute="leading" secondItem="QcS-dm-PuA" secondAttribute="leading" id="3FF-Ie-Am4"/>
+                            <constraint firstAttribute="trailing" secondItem="adA-yl-ARD" secondAttribute="trailing" id="Fe1-QY-1wq"/>
+                            <constraint firstItem="adA-yl-ARD" firstAttribute="leading" secondItem="d0N-le-7Gl" secondAttribute="leading" id="PS8-Zu-KP5"/>
+                            <constraint firstItem="d0N-le-7Gl" firstAttribute="top" secondItem="adA-yl-ARD" secondAttribute="bottom" id="b9r-S4-Ywo"/>
+                            <constraint firstItem="d0N-le-7Gl" firstAttribute="bottom" secondItem="qwQ-8X-JTx" secondAttribute="top" id="eWz-Fs-YzY"/>
+                            <constraint firstItem="adA-yl-ARD" firstAttribute="top" secondItem="5La-b3-hVN" secondAttribute="bottom" id="n8q-Co-Hcd"/>
+                            <constraint firstItem="adA-yl-ARD" firstAttribute="trailing" secondItem="d0N-le-7Gl" secondAttribute="trailing" id="o5I-Oy-TfY"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Pokemon" image="Pokemon" id="UrJ-Ji-Ydb"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="211" y="159"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="2Jn-3R-7yH">
+            <objects>
+                <tabBarController id="gIt-eP-aaY" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="eVf-Gd-B63">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="o35-Y3-F4y" kind="relationship" relationship="viewControllers" id="0ei-Og-jw3"/>
+                        <segue destination="lba-Zk-wfG" kind="relationship" relationship="viewControllers" id="eDn-Bq-gyg"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZPg-Qg-kng" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-609" y="487"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Eggs" width="15" height="15"/>
+        <image name="Pokemon" width="15" height="15"/>
+    </resources>
 </document>

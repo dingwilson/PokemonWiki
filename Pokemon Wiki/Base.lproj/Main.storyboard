@@ -54,17 +54,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="83.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="th5-9D-O9W">
-                                                    <rect key="frame" x="114" y="26" width="31.5" height="19.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="th5-9D-O9W">
+                                                    <rect key="frame" x="114" y="23" width="58.5" height="26.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MTW-qO-N1u">
-                                                    <rect key="frame" x="114" y="45.5" width="30.5" height="13.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MTW-qO-N1u">
+                                                    <rect key="frame" x="114" y="49.5" width="19.5" height="12"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -93,6 +93,7 @@
                     <connections>
                         <outlet property="pokemonTableView" destination="AMk-mM-Pn2" id="b5t-8H-sz6"/>
                         <outlet property="searchDisplayController" destination="4Rw-6u-kSI" id="qSI-4N-Miq"/>
+                        <segue destination="qxm-9t-HJp" kind="show" identifier="showPokemon" id="zEE-Ez-cLC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kzI-no-fAi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -107,6 +108,25 @@
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="-20" y="886"/>
+        </scene>
+        <!--Show Pokemon View Controller-->
+        <scene sceneID="uoQ-nF-RFp">
+            <objects>
+                <viewController id="ral-8w-ZRK" customClass="ShowPokemonViewController" customModule="Pokemon_Wiki" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XZQ-AP-t99"/>
+                        <viewControllerLayoutGuide type="bottom" id="qS4-ql-GCh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="17g-XO-1s8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Zy5-gI-wOq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="leN-wj-ZuN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1332" y="886"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="fxw-3e-xgp">
@@ -125,6 +145,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DEb-ke-ZFZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-840" y="1191"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kES-7v-6Jc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qxm-9t-HJp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="j8L-cm-gwV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ral-8w-ZRK" kind="relationship" relationship="rootViewController" id="rYv-Vp-CpU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xJJ-fZ-06v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="650" y="886"/>
         </scene>
     </scenes>
     <resources>
