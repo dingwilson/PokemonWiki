@@ -12,11 +12,15 @@ class ShowPokemonViewController: UIViewController {
     
     var selectedNumber = 0
 
+    @IBOutlet weak var number: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        print(selectedNumber)
+        getData(selectedNumber)
+        
+        number.text = "\(selectedNumber)"
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,6 +28,15 @@ class ShowPokemonViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func getData(number: Int) {
+        if let path = NSBundle.mainBundle().pathForResource("Pokemon", ofType: "plist"){
+            if let arrayOfDictionaries = NSArray(contentsOfFile: path){
+                for dict in arrayOfDictionaries {
+                    //pokemonData.append(dict.objectForKey("Name") as! String)
+                }
+            }
+        }
+    }
 
     /*
     // MARK: - Navigation

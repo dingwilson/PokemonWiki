@@ -121,8 +121,8 @@ class PokemonViewController: UIViewController, UITableViewDataSource, UITableVie
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        let destinationNavigationController = segue.destinationViewController as! UINavigationController
-        let targetController = destinationNavigationController.topViewController as! ShowPokemonViewController
+        let navigationController = segue.destinationViewController as! UINavigationController
+        let targetController = navigationController.topViewController as! ShowPokemonViewController
         
         targetController.selectedNumber = selectedNumber
     }

@@ -120,6 +120,11 @@
                     <view key="view" contentMode="scaleToFill" id="17g-XO-1s8">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XNq-T0-8aU">
+                                <rect key="frame" x="140" y="72" width="321" height="321"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Zy5-gI-wOq"/>
@@ -149,6 +154,7 @@
         <!--Navigation Controller-->
         <scene sceneID="kES-7v-6Jc">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xJJ-fZ-06v" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qxm-9t-HJp" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="j8L-cm-gwV">
@@ -160,7 +166,6 @@
                         <segue destination="ral-8w-ZRK" kind="relationship" relationship="rootViewController" id="rYv-Vp-CpU"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xJJ-fZ-06v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="650" y="886"/>
         </scene>
