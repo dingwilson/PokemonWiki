@@ -28,8 +28,8 @@ class ShowPokemonViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func getData(number: Int) {
-        if let path = NSBundle.mainBundle().pathForResource("Pokemon", ofType: "plist"){
+    func getData(_ number: Int) {
+        if let path = Bundle.main.path(forResource: "Pokemon", ofType: "plist"){
             if let arrayOfDictionaries = NSArray(contentsOfFile: path){
                 for dict in arrayOfDictionaries {
                     //pokemonData.append(dict.objectForKey("Name") as! String)

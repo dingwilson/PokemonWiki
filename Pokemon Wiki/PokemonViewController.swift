@@ -39,10 +39,10 @@ class PokemonViewController: UIViewController, UITableViewDataSource, UITableVie
     func getData() {
         // Gets Pokemon Data from Pokemon.txt
         
-        if let path = NSBundle.mainBundle().pathForResource("Pokemon", ofType: "plist"){
+        if let path = Bundle.main.path(forResource: "Pokemon", ofType: "plist"){
             if let arrayOfDictionaries = NSArray(contentsOfFile: path){
                 for dict in arrayOfDictionaries {
-                    pokemonData.append(dict.objectForKey("Name") as! String)
+                    pokemonData.append((dict as AnyObject).object(forKey: "Name") as! String)
                 }
             }
         }
@@ -51,31 +51,31 @@ class PokemonViewController: UIViewController, UITableViewDataSource, UITableVie
 
     // MARK: - Table view data source
 
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         // return the number of sections
         return 1
     }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // return the number of rows
         return pokemonData.count
     }
 
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
         // Configure the cell...
         cell.textLabel!.text = pokemonData[indexPath.row]
         cell.detailTextLabel!.text = String(format: "%03d", indexPath.row  + 1)
-        cell.imageView!.image = UIImage(named: String(pokemonData[indexPath.row]).lowercaseString)
+        cell.imageView!.image = UIImage(named: String(pokemonData[indexPath.row]).lowercased())
 
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedNumber = indexPath.row + 1
-        self.performSegueWithIdentifier("showPokemon", sender: self)
+        self.performSegue(withIdentifier: "showPokemon", sender: self)
     }
 
     /*
@@ -117,11 +117,11 @@ class PokemonViewController: UIViewController, UITableViewDataSource, UITableVie
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        let navigationController = segue.destinationViewController as! UINavigationController
+        let navigationController = segue.destination as! UINavigationController
         let targetController = navigationController.topViewController as! ShowPokemonViewController
         
         targetController.selectedNumber = selectedNumber
